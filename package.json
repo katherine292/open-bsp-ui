@@ -7,8 +7,9 @@
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
-    "preview": "vite preview",
-    "types:sync-check": "bash scripts/check-type-sync.sh"
+    "preview": "npm run build && wrangler dev",
+    "types:sync-check": "bash scripts/check-type-sync.sh",
+    "deploy": "npm run build && wrangler deploy"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.81.1",
@@ -55,7 +56,8 @@
     "prettier": "3.6.2",
     "typescript": "~5.9.3",
     "typescript-eslint": "^8.46.3",
-    "vite": "npm:rolldown-vite@7.2.2"
+    "vite": "npm:rolldown-vite@7.2.2",
+    "wrangler": "^4.105.0"
   },
   "overrides": {
     "vite": "npm:rolldown-vite@7.2.2"
